@@ -37,13 +37,15 @@ export const SearchWeather = () => {
       <Form.Control 
       placeholder="Ingrese nombre o codigo de ciudad"
       type='text'
+      id='inputSearch'
       {...register("Ciudad")}
       />
     </Form.Group>
     <Form.Group className="mb-3">
       <Form.Label>Numero de Resultados</Form.Label>
       <Form.Select
-      {...register("Resultados")} >
+      {...register("Resultados")}
+      id="inputSelect" >
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -52,7 +54,8 @@ export const SearchWeather = () => {
     <Form.Group className="mb-3">
       <Form.Label>Elige Lenguaje</Form.Label>
       <Form.Select
-      {...register("Lenguaje")} >
+      {...register("Lenguaje")}
+      id="inputLenguaje" >
         <option value="en">Ingles</option>
         <option value="pt">Portugues</option>
         <option value="sp">Spanish</option>

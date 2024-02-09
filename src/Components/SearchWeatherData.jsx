@@ -43,6 +43,11 @@ export const SearchWeatherData = ({lat, lon, lenguaje}) => {
                 console.log('Icono del clima:',data.weather[0].icon);
                 
                 console.log(data); // Puedes inspeccionar los datos completos en la consola
+
+                // const responseData = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=4b56f215333470bc78211cf09c98602e&lang=${lenguaje}`);
+                // const dataResponse = await responseData.json();
+
+                // console.log(dataResponse)
             } catch (error) {
                 console.error('Error al obtener datos del clima:', error);
             }
@@ -55,7 +60,7 @@ export const SearchWeatherData = ({lat, lon, lenguaje}) => {
 
   return (
     <div>
-        <img src={url} alt="" />
+        <img src={url} alt="Imagen del clima" />
     </div>
   )
 }
