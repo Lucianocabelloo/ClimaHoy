@@ -24,3 +24,7 @@
 .custom-placeholder::placeholder {
   color: #b6b8be; /* Cambia este valor al color que desees */
 }
+
+.ContainerReloj{
+  color: #dadce2;
+}

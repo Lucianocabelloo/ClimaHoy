@@ -3,9 +3,13 @@ import { useState } from 'react';
 import { SearchWeatherData } from './SearchWeatherData';
 
 export const SearchGeoCoding = ({ ciudad, resultados, lenguaje }) => {
-
     const [Lat, setLat] = useState("")
     const [Lon, setLon] = useState("")
+
+
+    console.log(ciudad)
+    console.log(resultados)
+    console.log(lenguaje)
 
     useEffect(() => {
         const fetchData = async () => {

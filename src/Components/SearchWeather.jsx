@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap'; 
 import { useForm } from "react-hook-form"
+import Reloj from './Reloj';
 import { SearchGeoCoding } from './SearchGeoCoding';
 
 
@@ -24,19 +25,19 @@ export const SearchWeather = () => {
         setLenguaje(data.Lenguaje)
     }
 
-    console.log(Ciudad)
-    console.log(Resultados)
-    console.log(Lenguaje)
+   console.log(Lenguaje)
 
   return (
     <>
+    <div className='d-flex justify-content-between flex-row-reverse'>
+
     <Form className='d-flex justify-content-end align-content-end gap-3' onSubmit={handleSubmit(onSubmit)}>
 
     <Form.Group className="mb-3 d-flex flex-column gap-3">
       <div className='d-flex gap-3'>
-      <Button id='buttonSearch'><i class="bi bi-search"></i></Button>
+      <Button id='buttonSearch' type='submit'><i class="bi bi-search"></i></Button>
       <Form.Control 
-      placeholder="Ingrese nombre o codigo de ciudad"
+      placeholder="Ingrese Ciudad o ZIP"
       type='text'
       id='inputSearch'
       className="custom-placeholder"
@@ -49,6 +50,7 @@ export const SearchWeather = () => {
       <Form.Select
       {...register("Resultados")}
       id="inputSelect" >
+        <option value="null">Resultados</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -58,14 +60,17 @@ export const SearchWeather = () => {
       <Form.Select
       {...register("Lenguaje")}
       id="inputLenguaje" >
+        <option value="null">Idioma</option>
         <option value="en">Ingles</option>
         <option value="pt">Portugues</option>
-        <option value="sp">Spanish</option>
+        <option value="es">Spanish</option>
       </Form.Select>
     </Form.Group>
           </Form>
 
-          <SearchGeoCoding ciudad={Ciudad}  resultados={parseInt(Resultados)} lenguage={Lenguaje}/>
+          <Reloj/>
+        </div>
+          <SearchGeoCoding ciudad={Ciudad}  resultados={parseInt(Resultados)} lenguaje={Lenguaje}/>
   </>
   )
 }

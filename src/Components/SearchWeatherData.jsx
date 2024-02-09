@@ -11,12 +11,13 @@ export const SearchWeatherData = ({lat, lon, lenguaje}) => {
     const [Clima, setClima] = useState("")
     const [ClimaDescription, setClimaDescription] = useState("")
     const [ClimaIcon, setClimaIcon] = useState("")
+
     
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4b56f215333470bc78211cf09c98602e&units=metric`);
+                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=${lenguaje}&appid=4b56f215333470bc78211cf09c98602e&units=metric`);
                 const data = await response.json();
                 // Acceder a los campos necesarios y establecer los estados correspondientes
                 setTempMinima(data.main.temp_min);
@@ -56,11 +57,9 @@ export const SearchWeatherData = ({lat, lon, lenguaje}) => {
         fetchData();
     }, [lat, lon, lenguaje]);
     
-    const url = `https://openweathermap.org/img/wn/${ClimaIcon}@4x.png`
 
   return (
     <div>
-        <img src={url} alt="Imagen del clima" />
     </div>
   )
 }
