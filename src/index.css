@@ -11,3 +11,16 @@
 .form-label{
   color: white;
 }
+
+#buttonSearch{
+  background-color: #1E1F24;
+  border: #b6b8be 1px solid;
+}
+
+.mb-3{
+  min-width: 150px;
+}
+
+.custom-placeholder::placeholder {
+  color: #b6b8be; /* Cambia este valor al color que desees */
+}
