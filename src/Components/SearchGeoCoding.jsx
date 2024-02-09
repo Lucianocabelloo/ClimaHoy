@@ -16,8 +16,6 @@ export const SearchGeoCoding = ({ ciudad, resultados, lenguaje }) => {
                 if (data && data.length > 0) {
                     setLat(data[0].lat);
                     setLon(data[0].lon);
-                } else {
-                    console.error('La respuesta de la API está vacía o no contiene datos válidos.');
                 }
             } catch (error) {
                 console.error('Error al obtener datos del clima:', error);
@@ -28,8 +26,7 @@ export const SearchGeoCoding = ({ ciudad, resultados, lenguaje }) => {
     }, [ciudad, resultados, lenguaje]);
 
 
-    console.log(Lat)
-    console.log(Lon)
+
 
     return (
         <SearchWeatherData lat={Lat}  lon={Lon} lenguaje={lenguaje} />
