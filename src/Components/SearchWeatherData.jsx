@@ -51,8 +51,11 @@ export const SearchWeatherData = ({lat, lon, lenguaje}) => {
         fetchData();
     }, [lat, lon, lenguaje]);
     
+    const url = `https://openweathermap.org/img/wn/${ClimaIcon}@4x.png`
 
   return (
-    <div>SearchWeatherData</div>
+    <div>
+        <img src={url} alt="" />
+    </div>
   )
 }
