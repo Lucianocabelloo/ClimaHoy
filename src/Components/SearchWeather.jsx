@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap'; 
 import { useForm } from "react-hook-form"
-import { SearchListWeather } from './SearchListWeather';
+import { SearchGeoCoding } from './SearchGeoCoding';
 
 
 export const SearchWeather = () => {
@@ -61,7 +61,7 @@ export const SearchWeather = () => {
     <Button variant="primary" type="submit">Enviar</Button>
           </Form>
 
-          <SearchListWeather ciudad={Ciudad}  resultados={parseInt(Resultados)} lenguage={Lenguaje}/>
+          <SearchGeoCoding ciudad={Ciudad}  resultados={parseInt(Resultados)} lenguage={Lenguaje}/>
   </>
   )
 }

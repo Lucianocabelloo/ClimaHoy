@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import { SearchWeatherData } from './SearchWeatherData';
 
-export const SearchListWeather = ({ ciudad, resultados, lenguaje }) => {
+export const SearchGeoCoding = ({ ciudad, resultados, lenguaje }) => {
 
     const [Lat, setLat] = useState("")
     const [Lon, setLon] = useState("")
@@ -31,6 +32,6 @@ export const SearchListWeather = ({ ciudad, resultados, lenguaje }) => {
     console.log(Lon)
 
     return (
-        <div>SearchListWeather</div>
+        <SearchWeatherData lat={Lat}  lon={Lon} lenguaje={lenguaje} />
     );
 };
