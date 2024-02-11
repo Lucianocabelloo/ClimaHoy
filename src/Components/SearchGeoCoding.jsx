@@ -14,7 +14,7 @@ export const SearchGeoCoding = ({ ciudad, resultados, lenguaje }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${ciudad}&limit=${resultados}&lang=${lenguaje}&appid=4b56f215333470bc78211cf09c98602e
+                const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${ciudad || "Tucuman"}&limit=${resultados || 1}&lang=${lenguaje || "es"}&appid=4b56f215333470bc78211cf09c98602e
 `);
                 const data = await response.json();
                 if (data && data.length > 0) {

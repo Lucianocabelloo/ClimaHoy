@@ -8,10 +8,14 @@ import { SearchGeoCoding } from './SearchGeoCoding';
 
 export const SearchWeather = () => {
 
+  const initialCiudad = "" || "Tucuman"
+  const initialLenguaje = "" || "es"
+  const initialResultados = "" || 1
 
-    const [Ciudad, setCiudad] = useState("")
-    const [Resultados, setResultados] = useState("")
-    const [Lenguaje, setLenguaje] = useState("")
+    const [Ciudad, setCiudad] = useState(initialCiudad)
+    const [Resultados, setResultados] = useState(initialLenguaje)
+    const [Lenguaje, setLenguaje] = useState(initialResultados)
+
 
     const {
         register,
