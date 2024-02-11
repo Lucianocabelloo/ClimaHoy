@@ -1,11 +1,35 @@
 #root{
   background-color: #1E1F24;
   height: 100vh;
+  background-image: url("https://ds.static.rtbf.be/article/image/1248x702/1/e/e/40c48dab939a482f04dcecde07e27de6-1451551789.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+/* 
+URL de CLIMAS
+Clear Sky: https://uploads-ssl.webflow.com/6277f83b4102c5e63d4c0204/62796cee8154b871994b6040_clearsky-poster-00001.jpg
+Few Clouds: "https://www.motosha.com/files/preview/2000x1018/26492-sky-replacement-bright-blue-clear-sky-with-white-clouds.jpg"
+Scattered Clouds: https://static.vecteezy.com/system/resources/previews/015/127/111/large_2x/scattered-clouds-in-the-sky-indicating-a-change-in-weather-free-photo.jpg
+Shower Rain: https://c.pxhere.com/photos/39/3d/cloud_dark_sky_stormy_sky_storm_rain-1089395.jpg!d
+Rain: https://static.vecteezy.com/system/resources/previews/022/453/355/non_2x/autumn-rain-in-the-forest-road-3d-rendering-computer-digital-drawing-generative-ai-free-photo.jpg
+Thunderstrom: https://www.stormgeo.com/assets/ArticleImages/thunderstorm-flipped__FocusFillWzQyODgsMjcwMCwieSIsNzRd.jpg
+Snow: https://media.lmneuquen.com/p/4031bbbf1e92ccea43fde9f5a95affc1/adjuntos/195/imagenes/007/096/0007096620/770x0/smart/nieve-invierno-ruta-smajpg.jpg
+Mist: https://ds.static.rtbf.be/article/image/1248x702/1/e/e/40c48dab939a482f04dcecde07e27de6-1451551789.jpg
+*/
 
 #inputSearch, #inputLenguaje, #inputSelect{
   background-color: #2E2E38;
   color: #b6b8be;
+}
+
+.container{
+  border: 1px solid #b6b8be;
+  padding: 64px;
+  background-color: #0000007a;
+  height: 80vh;
 }
 
 .form-label{
@@ -27,4 +51,56 @@
 
 .ContainerReloj{
   color: #dadce2;
+}
+
+.sectionMaquetado{
+  color: #dadce2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sectionTemp{
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.sectionTemp h3{
+  font-size: 48px;
+}
+
+.sectionTempMinMax{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionTempMinMax div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 4px 16px;
+  background-color: #2E2E38;
+}
+
+.sectionTempMinMax div p{
+  margin: 0px;
+}
+
+.sectionWeather{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.sectionWind{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
 }

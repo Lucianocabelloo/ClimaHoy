@@ -29,7 +29,7 @@ export const SearchWeather = () => {
 
   return (
     <>
-    <div className='d-flex justify-content-between flex-row-reverse'>
+    <div className='d-flex justify-content-between flex-row-reverse mb-5'>
 
     <Form className='d-flex justify-content-end align-content-end gap-3' onSubmit={handleSubmit(onSubmit)}>
 

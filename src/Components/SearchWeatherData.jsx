@@ -5,6 +5,7 @@ export const SearchWeatherData = ({lat, lon, lenguaje}) => {
 
     const [TempMinima, setTempMinima] = useState("")
     const [TempMaxima, setTempMaxima] = useState("")
+    const [Temp, setTemp] = useState("")
     const [Nombre, setNombre] = useState("")
     const [Pais, setPais] = useState("")
     const [Humedad, setHumedad] = useState("")
@@ -22,6 +23,8 @@ export const SearchWeatherData = ({lat, lon, lenguaje}) => {
                 // Acceder a los campos necesarios y establecer los estados correspondientes
                 setTempMinima(data.main.temp_min);
                 console.log('Temperatura Mínima:', data.main.temp_min);
+                setTemp(data.main.temp);
+                console.log('Temperatura:', data.main.temp);
                 
                 setTempMaxima(data.main.temp_max);
                 console.log('Temperatura Máxima:', data.main.temp_max);
@@ -56,10 +59,53 @@ export const SearchWeatherData = ({lat, lon, lenguaje}) => {
     
         fetchData();
     }, [lat, lon, lenguaje]);
+
+
+    const TempFix = parseInt(Temp).toFixed(1); 
+    const TempMin = parseInt(TempMinima).toFixed(1); 
+    const TempMax = parseInt(TempMaxima).toFixed(1);
     
+    const IconWeather = `https://openweathermap.org/img/wn/${ClimaIcon}@2x.png`
 
   return (
-    <div>
-    </div>
+    <section className='sectionMaquetado'>
+        <div className='d-flex flex-column gap-4'>
+
+        <div className='sectionUbicacion'>
+        <h2>{Nombre}, {Pais}</h2>
+        </div>
+        <div className='sectionTemp'>
+            <h3>{TempFix} °C</h3>
+            <div className='sectionTempMinMax'>
+                <div>
+                    <p>Min</p>
+                <h4>{TempMin} °C</h4>
+                </div>
+                <div>
+                    <p>Max</p>
+                <h4>{TempMax} °C</h4>
+                </div>
+            </div>
+        </div>
+        </div>
+        <article>
+
+        <div className='sectionWeather'>
+            <div>
+        <h2>{Clima}</h2>
+        <h3>{ClimaDescription}</h3>
+            </div>
+        <img src={IconWeather} alt="" />
+        </div>
+        <div className='sectionWind'>
+            <div>
+            <h4>Viento</h4>
+            <h5>Velocidad: 4,32 KM/H</h5>
+
+            </div>
+            <img src="https://static.thenounproject.com/png/7745-200.png" alt="" height={100} width={100} />
+        </div>
+        </article>
+    </section>
   )
 }
