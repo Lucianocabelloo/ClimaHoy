@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { SearchWeatherData } from './SearchWeatherData';
+import { Weather7Days } from './Weather7Days';
 
 export const SearchGeoCoding = ({ ciudad, resultados, lenguaje }) => {
     const [Lat, setLat] = useState("")
@@ -33,6 +34,9 @@ export const SearchGeoCoding = ({ ciudad, resultados, lenguaje }) => {
 
 
     return (
+        <>
         <SearchWeatherData lat={Lat}  lon={Lon} lenguaje={lenguaje} />
+        <Weather7Days lat={Lat}  lon={Lon} lenguaje={lenguaje} />
+        </>
     );
 };

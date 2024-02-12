@@ -69,7 +69,7 @@ export const SearchWeatherData = ({lat, lon, lenguaje}) => {
 
   return (
     <section className='sectionMaquetado'>
-        <div className='d-flex flex-column gap-4'>
+        <article className='d-flex flex-column gap-4'>
 
         <div className='sectionUbicacion'>
         <h2>{Nombre}, {Pais}</h2>
@@ -87,7 +87,8 @@ export const SearchWeatherData = ({lat, lon, lenguaje}) => {
                 </div>
             </div>
         </div>
-        </div>
+        </article>
+        
         <article>
 
         <div className='sectionWeather'>
